@@ -23,17 +23,23 @@ export default class App extends React.Component {
         name: 'omega',
         url: 'http://pngimg.com/uploads/transformers/transformers_PNG3.png'
       }
-    ]
+    ],
+    showTransformer: false
   }
 
-  clickFunction = () => {console.log('clicked')}
+  clickFunction = () => {
+    this.setState({showTransformer: !this.state.showTransformer})
+  }
 
   render() {
     return (
       <div className="App">
         <Header logo={this.state.proptimusLogo} button={this.clickFunction}/>
-        
-        <TransformersSection transformers={this.state.proptimusii}/> 
+        {
+          this.state.showTransformer
+          ? <TransformersSection transformers={this.state.proptimusii}/> 
+          : null
+        }
       </div>
     );
   }

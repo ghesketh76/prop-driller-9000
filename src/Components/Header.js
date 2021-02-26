@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Header() {
+function Header(props) {
 
   const handleClick = () => {
     props.button()
@@ -9,13 +9,13 @@ function Header() {
 
   return (
     <header>
-      <button>
+      
         <img
           src = {props.logo}
           alt = "logo"
           onClick={handleClick}
         />
-      </button>
+      
     </header>
   );
 }
