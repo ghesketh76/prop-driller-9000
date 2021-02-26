@@ -1,13 +1,15 @@
 import React from 'react';
 
-function Transformer() {
+function Transformer(props) {
 
   return (
-    <img
-      className = 'transformer'
-      src = {}
-      alt = {}
-    />
+    
+      <img
+        className = 'transformer'
+        src = {props.transformer.url}
+        alt = {props.transformer.name}
+      />
+    
   );
 }
 
